@@ -1,6 +1,6 @@
 {
   "name": "sheetsx",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A framework aimed at revolutionising the creation and maintenance of complex Google Sheets",
   "keywords": [
     "google sheets",
@@ -9,9 +9,10 @@
   ],
   "main": "dist/index.js",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.cjs"
     }
   },
   "homepage": "https://github.com/sheetsx/sheetsx",
@@ -43,7 +44,7 @@
     "test": "vitest run",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "check-exports": "attw --pack .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "local-release": "npm run ci && changeset version && changeset publish"
   }
 }

@@ -1,1 +1,1 @@
-export { sheetsx } from './placeholder.js';
+export { sheetsx } from './placeholder';
